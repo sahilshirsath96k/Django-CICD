@@ -11,5 +11,11 @@ pipeline {
                 sh 'docker ps'
             }
         }
+        stage('Build') {
+            steps {
+                echo "This is building the code"
+                sh 'docker build -t notes-app:latest .'
+            }
+        }
     }
 }
